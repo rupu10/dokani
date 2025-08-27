@@ -1,3 +1,95 @@
+
+
+
+# 🛒 Dokani – Shopping Web App
+
+A modern shopping web application built with **Next.js 13 (App Router)**, **NextAuth.js** for authentication, and **MongoDB** for data storage.  
+It provides user registration, login, product browsing, and product management features.
+
+---
+
+## 🚀 Tech Stack
+- **Frontend:** Next.js 13 (App Router, React)
+- **Authentication:** NextAuth.js
+- **Database:** MongoDB
+- **Styling:** Tailwind CSS (global styles)
+- **Backend:** Node.js + API routes inside Next.js
+
+---
+
+## ⚙️ Setup & Installation
+
+### 1. Clone the repository
+```bash
+git clone <your-repo-url>
+cd dokani
+
+# Project structure
+
+src/
+ ├── app/
+ │   ├── actions/auth/      # Auth-related actions
+ │   ├── api/               # API routes
+ │   ├── components/        # UI Components
+ │   ├── login/             # Login page
+ │   ├── register/          # Registration page
+ │   ├── product/[id]/      # Product details page
+ │   ├── products/          # Products listing page
+ │   └── page.jsx           # Homepage
+ ├── lib/dbConnect.js       # MongoDB connection helper
+ └── Providers/             # NextAuth provider setup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
