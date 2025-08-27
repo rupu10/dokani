@@ -16,10 +16,13 @@ function Navbar() {
 			<li className="flex">
 				<Link rel="noopener noreferrer" href={"/products"}className="flex items-center px-4 -mb-1  dark:border-">Products</Link>
 			</li>
-			{status == 'authenticated'?(
+			<li className="flex">
+				<Link rel="noopener noreferrer" href={"/addProducts"}className="flex items-center px-4 -mb-1  dark:border-">Add Products</Link>
+			</li>
+			{/* {status == 'authenticated'?(
 				<li className="flex">
 				<Link rel="noopener noreferrer" href={"/addProducts"}className="flex items-center px-4 -mb-1  dark:border-">Add Products</Link>
-			</li>): (<></>)}
+			</li>): (<></>)} */}
 			</>
         )
     }

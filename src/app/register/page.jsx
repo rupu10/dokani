@@ -9,6 +9,7 @@ function RegisterPage() {
         const email = form.email.value;
         const password = form.password.value;
         await registerUser({email,password});
+        
     }
   return (
     <div className="flex flex-col max-w-md mx-auto my-20 p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
@@ -35,13 +36,6 @@ function RegisterPage() {
           <div>
             <div className="flex justify-between mb-2">
               
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="text-xs hover:underline dark:text-gray-600"
-              >
-                Forgot password?
-              </a>
             </div>
             <input
               type="password"
@@ -58,7 +52,7 @@ function RegisterPage() {
               type="submit"
               className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50"
             >
-              Sign in
+              Sign up
             </button>
           </div>
           <p className="px-6 text-sm text-center dark:text-gray-600">

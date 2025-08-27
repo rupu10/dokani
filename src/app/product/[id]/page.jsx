@@ -1,9 +1,13 @@
-
+import { headers } from 'next/headers';
 import React from 'react';
 
 async function ProductDetailsPage({params}) {
     const p = await params
-    const res = await fetch(`http://localhost:3000/api/serv/${p.id}`)
+    const res = await fetch(`https://dokani-psi.vercel.app/api/serv/${p.id}`,
+		{
+			headers:  new Headers(await headers())
+		}
+	)
     const data = await res.json();
   return (
     <div className=''>
@@ -16,7 +20,10 @@ async function ProductDetailsPage({params}) {
 	</div>
 	<div className="space-y-4">
 		<div className="space-y-2">
-			<img src={data.image} alt="" className="block object-cover object-center w-full rounded-md h-120 dark:bg-gray-500" />
+			{/* <Image src={data.image} width={500} height={120}>
+
+			</Image> */}
+			<img src={data?.image} alt="" className="block object-cover object-center w-full rounded-md h-120 dark:bg-gray-500" />
 			<div className="flex items-center text-3xl">
 				<span className='text-orange-600 font-semibold'>$ {data.price}</span>
 			</div>

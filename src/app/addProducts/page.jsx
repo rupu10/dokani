@@ -1,25 +1,35 @@
 "use client"
+import { useSession } from "next-auth/react";
 import React, { useState } from "react";
 
 function AddProducts() {
+  const {data: session} = useSession()
+  console.log(session);
     const [imageur, setImageur] = useState();
   const handleImageUpload = async (e) => {
     const image = e.target.files[0];
-    const imageUploadUrl = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_image_upload_key}`
-    setImageur(imageUploadUrl)
+    // const imageUploadUrl = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_image_upload_key}`
+    setImageur(image)
   };
   
   const handleSubmit = async (e) =>{
-    e.preventDefault;
-    const form = e.target.value;
+    e.preventDefault();
+    const form = e.target;
     const name = form.name.value;
     const price = form.price.value;
     const color = form.color.value;
     const brand = form.brand.value;
     const stock = form.stock.value;
     const description = form.description.value;
-    const image = imageur
-    console.log({name,price,color,brand,stock,description,image});
+    // const image = imageur
+    const formData = {name,price,color,brand,stock,description}
+    // console.log(formData);
+    const res = await fetch("https://dokani-psi.vercel.app/api/serv/",{
+      method: "POST",
+      body: JSON.stringify(formData)
+    });
+    const postedRes = await res.json()
+    console.log(postedRes);
   }
   return (
     <div className="max-w-3xl mx-auto p-6">
